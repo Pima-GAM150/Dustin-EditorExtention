@@ -15,16 +15,11 @@ public class Rename_EditorWindow : EditorWindow
 
 	private bool AddNumbering;
 
+	private bool ByInstanceID;
+
 	#endregion
 
 	#region Unity Functions
-
-	public static void LaunchEditor()
-	{
-		var window = GetWindow<Rename_EditorWindow>("Rename Objects");
-
-		window.Show();
-	}
 
 	private void OnGUI()
 	{
@@ -35,17 +30,57 @@ public class Rename_EditorWindow : EditorWindow
 		Repaint();
 	}
 
-	
-
 	#endregion
 
 	#region My Functions
-
-	private void RenameThemAll()
+	/// <summary>
+	/// Draws the window 
+	/// </summary>
+	public static void LaunchEditor()
 	{
-		
+		var window = GetWindow<Rename_EditorWindow>("Rename Objects");
+
+		window.Show();
 	}
 
+	/// <summary>
+	/// renames the selected objects to what i entered
+	/// </summary>
+	private void RenameThemAll()
+	{
+		var i = 1;
+
+		SortSelected();
+
+		foreach(GameObject go in ObjsToRename)
+		{
+			go.name = "";
+
+			go.name = NewName + " " + (AddNumbering ? i.ToString() : "");
+
+			i++;
+		}
+
+	}
+
+	/// <summary>
+	/// Sorts the array of selected items by instance id
+	/// </summary>
+	private void SortSelected()
+	{
+		if (ByInstanceID)
+		{
+			Array.Sort(ObjsToRename, delegate (GameObject goA, GameObject goB) { return goB.GetInstanceID().CompareTo(goA.GetInstanceID()); });
+		}
+		else
+		{
+			Array.Sort(ObjsToRename, delegate (GameObject goA, GameObject goB) { return goA.name.CompareTo(goB.name); });
+		}
+	}
+	
+	/// <summary>
+	/// Draws the custom layout of my window
+	/// </summary>
 	private void DrawLayout()
 	{
 		GUILayout.Space(10);
@@ -68,6 +103,8 @@ public class Rename_EditorWindow : EditorWindow
 		EditorGUILayout.BeginHorizontal(EditorStyles.boldLabel);
 		EditorGUILayout.LabelField("Numbred");
 		AddNumbering = EditorGUILayout.Toggle(AddNumbering);
+		EditorGUILayout.LabelField("By Instance ID");
+		ByInstanceID = EditorGUILayout.Toggle(ByInstanceID);
 		EditorGUILayout.EndHorizontal();
 
 		EditorGUILayout.EndVertical();
