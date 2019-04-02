@@ -1,27 +1,14 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEditor;
 
-public class SnapToGrid_MenuItem : MonoBehaviour
+public class SnapToGrid_MenuItem
 {
-	#region Variables
-	
-		//public
-		
-		//private
-		
-	#endregion
-	
-	#region UnityFunctions
-	
-		void Start()
-		{
-			
-		}
+	#region My Functions
 
-		void Update()
-		{
-			
-		}
-		
+	[MenuItem("Dustin's Tools/SnapToGrid/Open Window")]
+	public static void OpenWindow()
+	{
+		Rename_EditorWindow.LaunchEditor();
+	}
+
 	#endregion
 }
