@@ -7,6 +7,7 @@ public class GM : MonoBehaviour
 
 	//public
 	public static GM Instance;
+
 	public GameData GD;
 
 	//private

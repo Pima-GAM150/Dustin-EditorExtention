@@ -1,0 +1,37 @@
+#main
+{
+
+}
+
+Button
+{
+
+}
+
+Button :hover
+{
+
+}
+Button :active
+{
+
+}
+
+Button :inactive
+{
+
+}
+
+Toggle
+{
+
+}
+
+Toggle :hover
+{
+
+}
+Toggle :checked
+{
+
+}

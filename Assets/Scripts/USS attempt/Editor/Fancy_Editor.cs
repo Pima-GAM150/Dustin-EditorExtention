@@ -1,9 +1,11 @@
 ﻿using System;
-using UnityEditor;
+using UnityEngine.Experimental;
+using UnityEditor.Experimental;
 using UnityEditor.SceneManagement;
+using UnityEditor;
 using UnityEngine;
 
-public class SnapToGrid_Editor : EditorWindow
+public class Fancy_Editor : EditorWindow
 {
 	#region Variables
 
@@ -11,42 +13,32 @@ public class SnapToGrid_Editor : EditorWindow
 
 	//private
 
-	private GameObject[] ObjsToSnap = new GameObject[0];
-
 	#endregion
 
 	#region Unity Functions
 
 	private void OnGUI()
 	{
-		ObjsToSnap = Selection.gameObjects;
 
 		DrawLayout();
 
 		Repaint();
 	}
-
 	#endregion
 
 	#region My Functions
 
 	public static void LaunchEditor()
 	{
-		var window = GetWindow<SnapToGrid_Editor>("Snap to Grid");
+		var win = GetWindow<Fancy_Editor>();
 
-		window.Show();
-	}
+		win.Show();
 
-	private void SnapToGrid()
-	{
-
-		
 	}
 
 	private void DrawLayout()
 	{
-		
-	}
 
+	}
 	#endregion
 }
