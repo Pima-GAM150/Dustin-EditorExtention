@@ -1,6 +1,6 @@
 #main
 {
-
+	background-color:#113322;
 }
 
 Button
@@ -10,14 +10,33 @@ Button
 
 Button :hover
 {
-
+	
 }
 Button :active
+{
+	-button-text-color:#123456;
+}
+
+Button :inactive
 {
 
 }
 
-Button :inactive
+.Fancy__button
+{
+	-button-text-color:#123456;
+	flex:none;
+	width:200px;
+}
+.Fancy__button:hover
+{
+
+}
+.Fancy__button:active
+{
+
+}
+.Fancy__button:inactive
 {
 
 }
@@ -34,4 +53,12 @@ Toggle :hover
 Toggle :checked
 {
 
+}
+
+#title
+{
+	color:#0F6D08;
+	font-size:30;
+	font-style: bold-and-italic;
+	-unity-text-align: middle-center;
 }

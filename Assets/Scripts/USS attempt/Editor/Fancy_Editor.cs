@@ -1,9 +1,8 @@
 ﻿using System;
-using UnityEngine.Experimental;
-using UnityEditor.Experimental;
 using UnityEditor.SceneManagement;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Fancy_Editor : EditorWindow
 {
@@ -19,7 +18,6 @@ public class Fancy_Editor : EditorWindow
 
 	private void OnGUI()
 	{
-
 		DrawLayout();
 
 		Repaint();
@@ -30,10 +28,17 @@ public class Fancy_Editor : EditorWindow
 
 	public static void LaunchEditor()
 	{
-		var win = GetWindow<Fancy_Editor>();
+		var window = GetWindow(typeof(Fancy_Editor));
+		
+		var uiAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Scripts/USS attempt/Editor/MyWindow.uxml");
 
-		win.Show();
+		var Layout = uiAsset.CloneTree();
 
+		var myStyle = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Scripts/USS attempt/Editor/MyStylesheet.uss");
+
+		window.rootVisualElement.styleSheets.Add(myStyle);
+
+		window.rootVisualElement.Add(Layout);
 	}
 
 	private void DrawLayout()
