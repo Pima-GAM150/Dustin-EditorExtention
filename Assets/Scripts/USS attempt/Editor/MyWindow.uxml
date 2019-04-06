@@ -4,14 +4,6 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="UnityEngine.UIElements"
     xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
-    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd"
-		name="main">
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
 	
-	<Label name ="title" text="this is a fancy window"/>
-	
-	<Box name="main">
-		
-		<Button name="submit" class="Fancy__button" text="Do The Thing"/>
-		
-	</Box>
 </UXML>

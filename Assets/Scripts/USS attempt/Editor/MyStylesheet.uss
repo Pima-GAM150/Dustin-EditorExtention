@@ -1,6 +1,6 @@
 #main
 {
-	background-color:#113322;
+	-background-color:#113322;
 }
 
 Button
@@ -24,7 +24,8 @@ Button :inactive
 
 .Fancy__button
 {
-	-button-text-color:#123456;
+	background-color:#101092;
+	color:#280593;
 	flex:none;
 	width:200px;
 }
@@ -41,24 +42,24 @@ Button :inactive
 
 }
 
-Toggle
-{
-
-}
-
-Toggle :hover
-{
-
-}
-Toggle :checked
-{
-
-}
-
 #title
 {
 	color:#0F6D08;
-	font-size:30;
+	font-size:15;
 	font-style: bold-and-italic;
 	-unity-text-align: middle-center;
+}
+
+.My_Fancy_box
+{
+	flex:none;
+
+	color:#654321;
+
+	border-width:5px;
+	border-color:#123456;
+	
+	height:300px;
+	width:500px
+	
 }

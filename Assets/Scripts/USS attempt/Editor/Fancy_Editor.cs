@@ -1,8 +1,13 @@
 ﻿using System;
 using UnityEditor.SceneManagement;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
+
+
+using Toolbar = UnityEditor.UIElements.Toolbar;
+using PopupWindow = UnityEngine.UIElements.PopupWindow;
 
 public class Fancy_Editor : EditorWindow
 {
@@ -12,15 +17,26 @@ public class Fancy_Editor : EditorWindow
 
 	//private
 
+	Button doTheThing;
+
+
 	#endregion
 
 	#region Unity Functions
 
+	private void OnEnable()
+	{
+		Init();
+	}
+
 	private void OnGUI()
 	{
-		DrawLayout();
-
 		Repaint();
+	}
+
+	private void OnDisable()
+	{
+		
 	}
 	#endregion
 
@@ -41,9 +57,32 @@ public class Fancy_Editor : EditorWindow
 		window.rootVisualElement.Add(Layout);
 	}
 
-	private void DrawLayout()
+	private void Init()
 	{
+		var root = this.rootVisualElement;
 
+		var MyBox = new Box();
+
+		MyBox.AddToClassList("My_Fancy_box");
+
+		doTheThing = new Button
+		{
+			text = "Do The Thing",
+
+			clickable = new Clickable(l => DoTheThing())
+		};
+
+		doTheThing.AddToClassList("Fancy__button");
+
+		MyBox.Add(doTheThing);
+
+		root.Add(MyBox);
 	}
+
+	private void DoTheThing()
+	{
+		Debug.Log("grrrrr");
+	}
+
 	#endregion
 }
