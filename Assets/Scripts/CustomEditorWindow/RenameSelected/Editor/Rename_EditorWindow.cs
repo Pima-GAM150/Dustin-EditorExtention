@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using System;
 
@@ -61,6 +62,7 @@ public class Rename_EditorWindow : EditorWindow
 			i++;
 		}
 
+		EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
 	}
 
 	/// <summary>
@@ -94,17 +96,22 @@ public class Rename_EditorWindow : EditorWindow
 		EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
 		EditorGUILayout.BeginHorizontal(EditorStyles.boldLabel);
+
 		EditorGUILayout.LabelField("New Name For Objects");
 		NewName = EditorGUILayout.TextField(NewName);
+
 		EditorGUILayout.EndHorizontal();
 
 		GUILayout.Space(10);
 
 		EditorGUILayout.BeginHorizontal(EditorStyles.boldLabel);
+
 		EditorGUILayout.LabelField("Numbred");
 		AddNumbering = EditorGUILayout.Toggle(AddNumbering);
+
 		EditorGUILayout.LabelField("By Instance ID");
 		ByInstanceID = EditorGUILayout.Toggle(ByInstanceID);
+
 		EditorGUILayout.EndHorizontal();
 
 		EditorGUILayout.EndVertical();
