@@ -1,65 +1,85 @@
-#main
-{
-	-background-color:#113322;
-}
-
-Button
-{
-
-}
-
-Button :hover
-{
-	
-}
-Button :active
-{
-	-button-text-color:#123456;
-}
-
-Button :inactive
-{
-
-}
-
 .Fancy__button
 {
 	background-color:#101092;
 	color:#280593;
-	flex:none;
-	width:200px;
+	flex-grow:0;
+	font-size:20;
+	margin:5px;
+	padding:5px
+	bottom:10px;
 }
 .Fancy__button:hover
 {
-
-}
-.Fancy__button:active
-{
-
-}
-.Fancy__button:inactive
-{
-
+	background-color:#ffff00;
+	color:#ffff00;
 }
 
-#title
+.TextField
 {
-	color:#0F6D08;
-	font-size:15;
-	font-style: bold-and-italic;
-	-unity-text-align: middle-center;
+	flex-direction:row;
+	
+	backgorund-color:rgb(125, 80, 90);
+
+	font-size:20;
+	-unity-font-style:bold;
+
+	color:rgb(0,255,0);
+
+}
+
+.TextField:hover
+{
+	backGround-color:rgba(125,80,20,80);
+
+	-unity-font-style:bold-and-italic;
+
+	color:rgba(0,255,0,80);
 }
 
 .My_Fancy_box
 {
-	flex:none;
+	flex-grow:0;
 
-	color:#654321;
+	background-color:#7639ab;
+	color:#abc765;
+
+	padding:5px;
+
+	margin:5px;
 
 	border-width:5px;
 	border-color:#123456;
-	
-	height:300px;
-	width:500px
-	
+	border-radius:5px;
+
+	height:1000;
+		
+}
+
+#row
+{
+	margin:5px;
+
+	padding:5px;
+
+	border-width:5px;
+	border-color:#58ab84;
+	border-radius:5;
+
+	flex-drection:row;
+
+	background-color:#029384;
+
+	font-size:20px
+
+}
+
+.FloatField
+{
+	background-color:#475678;
+	color:#264869;
+}
+.FloatField:hover
+{
+	background-color:rgba(200,95,123,50);
+	color:#692648;
 }
